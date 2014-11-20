@@ -1,18 +1,18 @@
 /*
  * Class that defines the agent function.
- * 
+ *
  * Written by James P. Biagioni (jbiagi1@uic.edu)
  * for CS511 Artificial Intelligence II
  * at The University of Illinois at Chicago
- * 
- * Last modified 2/19/07 
- * 
+ *
+ * Last modified 2/19/07
+ *
  * DISCLAIMER:
  * Elements of this application were borrowed from
  * the client-server implementation of the Wumpus
  * World Simulator written by Kruti Mehta at
  * The University of Texas at Arlington.
- * 
+ *
  */
 
 import java.util.Random;
@@ -37,7 +37,7 @@ class AgentFunction {
 	public AgentFunction()
 	{
 		// for illustration purposes; you may delete all code
-		// inside this constructor when implementing your 
+		// inside this constructor when implementing your
 		// own intelligent agent
 
 		// this integer array will store the agent actions
@@ -76,7 +76,7 @@ class AgentFunction {
 		}
 
 		// return action to be performed
-		return actionTable[rand.nextInt(8)];	    
+		return actionTable[rand.nextInt(8)];	
 	}
 
 	// public method to return the agent's name

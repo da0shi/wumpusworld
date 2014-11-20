@@ -1,18 +1,18 @@
 /*
  * Class that defines the simulation environment.
- * 
+ *
  * Written by James P. Biagioni (jbiagi1@uic.edu)
  * for CS511 Artificial Intelligence II
  * at The University of Illinois at Chicago
- * 
- * Last modified 4/14/08 
- * 
+ *
+ * Last modified 4/14/08
+ *
  * DISCLAIMER:
  * Elements of this application were borrowed from
  * the client-server implementation of the Wumpus
  * World Simulator written by Kruti Mehta at
  * The University of Texas at Arlington.
- * 
+ *
  */
 
 //import java.io.BufferedWriter;

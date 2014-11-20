@@ -1,24 +1,24 @@
 /*
  * Wumpus-Lite, version 0.21 alpha
  * A lightweight Java-based Wumpus World Simulator
- * 
+ *
  * Written by James P. Biagioni (jbiagi1@uic.edu)
  * for CS511 Artificial Intelligence II
  * at The University of Illinois at Chicago
- * 
+ *
  * Thanks to everyone who provided feedback and
  * suggestions for improving this application,
  * especially the students from Professor
  * Gmytrasiewicz's Spring 2007 CS511 class.
- * 
+ *
  * Last modified 4/14/08
- * 
+ *
  * DISCLAIMER:
  * Elements of this application were borrowed from
  * the client-server implementation of the Wumpus
  * World Simulator written by Kruti Mehta at
  * The University of Texas at Arlington.
- * 
+ *
  */
 
 
@@ -185,7 +185,7 @@ class WorldApplication {
 			System.out.println("An exception was thrown: " + e);
 		}
 
-		System.out.println("\nFinished.");	    
+		System.out.println("\nFinished.");	
 	}
 
 	public static char[][][] generateRandomWumpusWorld(int seed, int size, boolean randomlyPlaceAgent) {
@@ -200,7 +200,7 @@ class WorldApplication {
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 				for (int k = 0; k < 4; k++) {
-					newWorld[i][j][k] = ' '; 
+					newWorld[i][j][k] = ' ';
 				}
 			}
 		}
@@ -248,7 +248,7 @@ class WorldApplication {
 
 			while ((x == agentXLoc && y == agentYLoc) | occupied[x][y] == true) {
 				x = randGen.nextInt(size);
-				y = randGen.nextInt(size);    	   
+				y = randGen.nextInt(size);    	
 			}
 
 			occupied[x][y] = true;
@@ -263,7 +263,7 @@ class WorldApplication {
 
 		while (x == agentXLoc && y == agentYLoc) {
 			x = randGen.nextInt(size);
-			y = randGen.nextInt(size);   
+			y = randGen.nextInt(size);
 		}
 
 		occupied[x][y] = true;
@@ -276,7 +276,7 @@ class WorldApplication {
 
 		//while (x == 0 && y == 0) {
 		//	x = randGen.nextInt(size);
-		//	y = randGen.nextInt(size);    	   
+		//	y = randGen.nextInt(size);    	
 		//}
 
 		occupied[x][y] = true;

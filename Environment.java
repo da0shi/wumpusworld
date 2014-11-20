@@ -1,18 +1,18 @@
 /*
  * Class that defines the environment.
- * 
+ *
  * Written by James P. Biagioni (jbiagi1@uic.edu)
  * for CS511 Artificial Intelligence II
  * at The University of Illinois at Chicago
- * 
- * Last modified 4/14/08 
- * 
+ *
+ * Last modified 4/14/08
+ *
  * DISCLAIMER:
  * Elements of this application were borrowed from
  * the client-server implementation of the Wumpus
  * World Simulator written by Kruti Mehta at
  * The University of Texas at Arlington.
- * 
+ *
  */
 
 //import java.io.BufferedWriter;
@@ -191,7 +191,7 @@ class Environment {
 					if (x-1 >= 0) percepts[x-1][y][1] = ' ';
 					if (x+1 < worldSize) percepts[x+1][y][1] = ' ';
 					if (y-1 >= 0) percepts[x][y-1][1] = ' ';
-					if (y+1 < worldSize) percepts[x][y+1][1] = ' '; 
+					if (y+1 < worldSize) percepts[x][y+1][1] = ' ';
 
 					//printPercepts();
 
@@ -211,7 +211,7 @@ class Environment {
 					if (x-1 >= 0) percepts[x-1][y][1] = ' ';
 					if (x+1 < worldSize) percepts[x+1][y][1] = ' ';
 					if (y-1 >= 0) percepts[x][y-1][1] = ' ';
-					if (y+1 < worldSize) percepts[x][y+1][1] = ' '; 
+					if (y+1 < worldSize) percepts[x][y+1][1] = ' ';
 
 					//printPercepts();
 
@@ -231,7 +231,7 @@ class Environment {
 					if (x-1 >= 0) percepts[x-1][y][1] = ' ';
 					if (x+1 < worldSize) percepts[x+1][y][1] = ' ';
 					if (y-1 >= 0) percepts[x][y-1][1] = ' ';
-					if (y+1 < worldSize) percepts[x][y+1][1] = ' '; 
+					if (y+1 < worldSize) percepts[x][y+1][1] = ' ';
 
 					//printPercepts();
 
@@ -251,7 +251,7 @@ class Environment {
 					if (x-1 >= 0) percepts[x-1][y][1] = ' ';
 					if (x+1 < worldSize) percepts[x+1][y][1] = ' ';
 					if (y-1 >= 0) percepts[x][y-1][1] = ' ';
-					if (y+1 < worldSize) percepts[x][y+1][1] = ' '; 
+					if (y+1 < worldSize) percepts[x][y+1][1] = ' ';
 
 					//printPercepts();
 

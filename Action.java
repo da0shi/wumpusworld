@@ -1,18 +1,18 @@
 /*
  * Class that defines agent actions.
- * 
+ *
  * Written by James P. Biagioni (jbiagi1@uic.edu)
  * for CS511 Artificial Intelligence II
  * at The University of Illinois at Chicago
- * 
- * Last modified 1/31/07 
- * 
+ *
+ * Last modified 1/31/07
+ *
  * DISCLAIMER:
  * Elements of this application were borrowed from
  * the client-server implementation of the Wumpus
  * World Simulator written by Kruti Mehta at
  * The University of Texas at Arlington.
- * 
+ *
  */
 
 class Action {
