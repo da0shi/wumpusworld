@@ -16,12 +16,16 @@
  */
 
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 class AgentFunction {
 
 	// string to store the agent's name
 	// do not remove this variable
 	private String agentName = "Agent Smith";
+
+	private Map<Sensor, Integer> actionLog;
 
 	// all of these variables are created and used
 	// for illustration purposes; you may delete them
@@ -36,6 +40,7 @@ class AgentFunction {
 
 	public AgentFunction()
 	{
+		actionLog = new HashMap<Sensor, Integer>();
 		// for illustration purposes; you may delete all code
 		// inside this constructor when implementing your
 		// own intelligent agent
