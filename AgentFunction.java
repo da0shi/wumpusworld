@@ -16,12 +16,16 @@
  */
 
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 class AgentFunction {
 
 	// string to store the agent's name
 	// do not remove this variable
 	private String agentName = "Agent Smith";
+
+	private Map<Sensor, Integer> actionLog;
 
 	// all of these variables are created and used
 	// for illustration purposes; you may delete them
@@ -36,6 +40,7 @@ class AgentFunction {
 
 	public AgentFunction()
 	{
+		actionLog = new HashMap<Sensor, Integer>();
 		// for illustration purposes; you may delete all code
 		// inside this constructor when implementing your
 		// own intelligent agent
@@ -59,29 +64,52 @@ class AgentFunction {
 
 	public int process(TransferPercept tp)
 	{
+		int action = Action.GO_FORWARD;
 		// To build your own intelligent agent, replace
 		// all code below this comment block. You have
 		// access to all percepts through the object
 		// 'tp' as illustrated here:
 
 		// read in the current percepts
-		bump = tp.getBump();
-		glitter = tp.getGlitter();
-		breeze = tp.getBreeze();
-		stench = tp.getStench();
-		scream = tp.getScream();
-
-		if (bump == true || glitter == true || breeze == true || stench == true || scream == true) {
-			// do something...?
+		Sensor sensor = new Sensor (tp.getBump(), tp.getGlitter(),
+				tp.getBreeze(), tp.getStench(), tp.getScream());
+		if (sensor.glitter) {
+			return doAction(Action.GRAB, sensor);
+		}
+		if (actionLog.size() == 0) {
+			return doAction(Action.GO_FORWARD, sensor);
 		}
 
+
 		// return action to be performed
-		return actionTable[rand.nextInt(8)];	
+		return doAction (action, sensor);
+	}
+
+	private int doAction (int action, Sensor sensor)
+	{
+		actionLog.put(sensor, action);
+		return action;
 	}
 
 	// public method to return the agent's name
 	// do not remove this method
 	public String getAgentName() {
 		return agentName;
+	}
+
+}
+class Sensor {
+	public boolean bump;
+	public boolean glitter;
+	public boolean breeze;
+	public boolean stench;
+	public boolean scream;
+	public Sensor (boolean bump, boolean glitter, boolean breeze,
+			boolean stench, boolean scream) {
+		this.bump = bump;
+		this.glitter = glitter;
+		this.breeze = breeze;
+		this.stench = stench;
+		this.scream = scream;
 	}
 }
