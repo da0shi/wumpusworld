@@ -71,7 +71,7 @@ class AgentFunction {
 
 		// read in the current percepts
 		Sensor sensor = new Sensor (tp.getBump(), tp.getGlitter(),
-		 tp.getBreeze(), tp.getStench(), tp.getScream());
+				tp.getBreeze(), tp.getStench(), tp.getScream());
 
 		// return action to be performed
 		return actionTable[rand.nextInt(8)];	
@@ -83,19 +83,19 @@ class AgentFunction {
 		return agentName;
 	}
 
-	class Sensor {
-		public boolean bump;
-		public boolean glitter;
-		public boolean breeze;
-		public boolean stench;
-		public boolean scream;
-		public Sensor (boolean bump, boolean glitter, boolean breeze,
-				boolean stench, boolean scream) {
-			this.bump = bump;
-			this.glitter = glitter;
-			this.breeze = breeze;
-			this.stench = stench;
-			this.scream = scream;
-		}
+}
+class Sensor {
+	public boolean bump;
+	public boolean glitter;
+	public boolean breeze;
+	public boolean stench;
+	public boolean scream;
+	public Sensor (boolean bump, boolean glitter, boolean breeze,
+			boolean stench, boolean scream) {
+		this.bump = bump;
+		this.glitter = glitter;
+		this.breeze = breeze;
+		this.stench = stench;
+		this.scream = scream;
 	}
 }
