@@ -64,6 +64,7 @@ class AgentFunction {
 
 	public int process(TransferPercept tp)
 	{
+		int action = Action.GO_FORWARD;
 		// To build your own intelligent agent, replace
 		// all code below this comment block. You have
 		// access to all percepts through the object
@@ -73,8 +74,15 @@ class AgentFunction {
 		Sensor sensor = new Sensor (tp.getBump(), tp.getGlitter(),
 				tp.getBreeze(), tp.getStench(), tp.getScream());
 
+
 		// return action to be performed
-		return actionTable[rand.nextInt(8)];	
+		return doAction (action, sensor);
+	}
+
+	private int doAction (int action, Sensor sensor)
+	{
+		actionLog.put(sensor, action);
+		return action;
 	}
 
 	// public method to return the agent's name
