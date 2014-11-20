@@ -84,4 +84,20 @@ class AgentFunction {
 	public String getAgentName() {
 		return agentName;
 	}
+
+	class Sensor {
+		public boolean bump;
+		public boolean glitter;
+		public boolean breeze;
+		public boolean stench;
+		public boolean scream;
+		public Sensor (boolean bump, boolean glitter, boolean breeze,
+				boolean stench, boolean scream) {
+			this.bump = bump;
+			this.glitter = glitter;
+			this.breeze = breeze;
+			this.stench = stench;
+			this.scream = scream;
+		}
+	}
 }
