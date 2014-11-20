@@ -17,19 +17,19 @@
  */
 
 class TransferPercept {
-	
+
 	private Environment environment;
-		
+
 	public TransferPercept(Environment wumpusEnvironment) {
-		
+
 		environment = wumpusEnvironment;
-		
+
 	}
-	
+
 	public boolean getBump() {
 		return environment.getBump();
 	}
-	
+
 	public boolean getGlitter() {
 		return environment.getGlitter();
 	}
@@ -41,9 +41,9 @@ class TransferPercept {
 	public boolean getStench() {
 		return environment.getStench();
 	}
-	
+
 	public boolean getScream() {
 		return environment.getScream();
 	}
-	
+
 }

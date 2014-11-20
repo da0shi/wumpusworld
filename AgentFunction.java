@@ -18,11 +18,11 @@
 import java.util.Random;
 
 class AgentFunction {
-	
+
 	// string to store the agent's name
 	// do not remove this variable
 	private String agentName = "Agent Smith";
-	
+
 	// all of these variables are created and used
 	// for illustration purposes; you may delete them
 	// when implementing your own intelligent agent
@@ -42,7 +42,7 @@ class AgentFunction {
 
 		// this integer array will store the agent actions
 		actionTable = new int[8];
-				  
+
 		actionTable[0] = Action.GO_FORWARD;
 		actionTable[1] = Action.GO_FORWARD;
 		actionTable[2] = Action.GO_FORWARD;
@@ -51,7 +51,7 @@ class AgentFunction {
 		actionTable[5] = Action.TURN_LEFT;
 		actionTable[6] = Action.GRAB;
 		actionTable[7] = Action.SHOOT;
-		
+
 		// new random number generator, for
 		// randomly picking actions to execute
 		rand = new Random();
@@ -63,22 +63,22 @@ class AgentFunction {
 		// all code below this comment block. You have
 		// access to all percepts through the object
 		// 'tp' as illustrated here:
-		
+
 		// read in the current percepts
 		bump = tp.getBump();
 		glitter = tp.getGlitter();
 		breeze = tp.getBreeze();
 		stench = tp.getStench();
 		scream = tp.getScream();
-		
+
 		if (bump == true || glitter == true || breeze == true || stench == true || scream == true) {
 			// do something...?
 		}
-		
+
 		// return action to be performed
-	    return actionTable[rand.nextInt(8)];	    
+		return actionTable[rand.nextInt(8)];	    
 	}
-	
+
 	// public method to return the agent's name
 	// do not remove this method
 	public String getAgentName() {
