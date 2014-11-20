@@ -65,15 +65,8 @@ class AgentFunction {
 		// 'tp' as illustrated here:
 
 		// read in the current percepts
-		bump = tp.getBump();
-		glitter = tp.getGlitter();
-		breeze = tp.getBreeze();
-		stench = tp.getStench();
-		scream = tp.getScream();
-
-		if (bump == true || glitter == true || breeze == true || stench == true || scream == true) {
-			// do something...?
-		}
+		Sensor sensor = new Sensor (tp.getBump(), tp.getGlitter(),
+		 tp.getBreeze(), tp.getStench(), tp.getScream());
 
 		// return action to be performed
 		return actionTable[rand.nextInt(8)];	
