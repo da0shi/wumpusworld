@@ -73,6 +73,12 @@ class AgentFunction {
 		// read in the current percepts
 		Sensor sensor = new Sensor (tp.getBump(), tp.getGlitter(),
 				tp.getBreeze(), tp.getStench(), tp.getScream());
+		if (sensor.glitter) {
+			return doAction(Action.GRAB, sensor);
+		}
+		if (actionLog.size() == 0) {
+			return doAction(Action.GO_FORWARD, sensor);
+		}
 
 
 		// return action to be performed
