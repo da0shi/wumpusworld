@@ -16,33 +16,40 @@
  *
  */
 
-class TransferPercept {
+class TransferPercept
+{
 
 	private Environment environment;
 
-	public TransferPercept(Environment wumpusEnvironment) {
+	public TransferPercept(Environment wumpusEnvironment)
+	{
 
 		environment = wumpusEnvironment;
 
 	}
 
-	public boolean getBump() {
+	public boolean getBump()
+	{
 		return environment.getBump();
 	}
 
-	public boolean getGlitter() {
+	public boolean getGlitter()
+	{
 		return environment.getGlitter();
 	}
 
-	public boolean getBreeze() {
+	public boolean getBreeze()
+	{
 		return environment.getBreeze();
 	}
 
-	public boolean getStench() {
+	public boolean getStench()
+	{
 		return environment.getStench();
 	}
 
-	public boolean getScream() {
+	public boolean getScream()
+	{
 		return environment.getScream();
 	}
 

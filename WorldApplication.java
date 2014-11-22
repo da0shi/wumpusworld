@@ -26,11 +26,13 @@
 //import java.io.FileWriter;
 import java.util.Random;
 
-class WorldApplication {
+class WorldApplication
+{
 
 	private static String VERSION = "v0.21a";
 
-	public static void main (String args[]) {
+	public static void main (String args[])
+	{
 
 		int worldSize = 4;
 		int numTrials = 1;
@@ -56,20 +58,20 @@ class WorldApplication {
 			// if the world dimension is specified
 			if (arg.equals("-d") == true) {
 
-				if (Integer.parseInt(args[i+1]) > 1) {	    		
+				if (Integer.parseInt(args[i+1]) > 1) {
 
 					worldSize = Integer.parseInt(args[i+1]);
 				}
 
 				i++;
-			}	    	
+			}
 			// if the maximum number of steps is specified
 			else if (arg.equals("-s") == true) {
 
 				maxSteps = Integer.parseInt(args[i+1]);
 				i++;
 
-			}	    	
+			}
 			// if the number of trials is specified
 			else if (arg.equals("-t") == true) {
 
@@ -94,10 +96,10 @@ class WorldApplication {
 			}
 			// if the output filename is specified
 			//else if (arg.equals("-f") == true) {
-			//	
+			//
 			//	outFilename = String.valueOf(args[i+1]);
 			//	i++;
-			//	
+			//
 			//}
 			// if the non-determinism is specified
 			else if (arg.equals("-n") == true) {
@@ -129,7 +131,7 @@ class WorldApplication {
 			//outputWriter.write("Random Agent Location: " + randomAgentLoc + "\n");
 
 			System.out.println("Random number seed: " + seed);
-			//outputWriter.write("Random number seed: " + seed + "\n");		    	
+			//outputWriter.write("Random number seed: " + seed + "\n");
 
 			//System.out.println("Output filename: " + outFilename);
 			//outputWriter.write("Output filename: " + outFilename + "\n");
@@ -153,7 +155,7 @@ class WorldApplication {
 				//outputWriter.write("\n\n___________________________________________\n\n");
 
 				if (userDefinedSeed == true) {
-					wumpusWorld = generateRandomWumpusWorld(++seed, worldSize, randomAgentLoc);	
+					wumpusWorld = generateRandomWumpusWorld(++seed, worldSize, randomAgentLoc);
 				}
 				else {
 					wumpusWorld = generateRandomWumpusWorld(rand.nextInt(), worldSize, randomAgentLoc);
@@ -185,10 +187,11 @@ class WorldApplication {
 			System.out.println("An exception was thrown: " + e);
 		}
 
-		System.out.println("\nFinished.");	
+		System.out.println("\nFinished.");
 	}
 
-	public static char[][][] generateRandomWumpusWorld(int seed, int size, boolean randomlyPlaceAgent) {
+	public static char[][][] generateRandomWumpusWorld(int seed, int size, boolean randomlyPlaceAgent)
+	{
 
 		char[][][] newWorld = new char[size][size][4];
 		boolean[][] occupied = new boolean[size][size];
@@ -248,7 +251,7 @@ class WorldApplication {
 
 			while ((x == agentXLoc && y == agentYLoc) | occupied[x][y] == true) {
 				x = randGen.nextInt(size);
-				y = randGen.nextInt(size);    	
+				y = randGen.nextInt(size);
 			}
 
 			occupied[x][y] = true;
@@ -276,7 +279,7 @@ class WorldApplication {
 
 		//while (x == 0 && y == 0) {
 		//	x = randGen.nextInt(size);
-		//	y = randGen.nextInt(size);    	
+		//	y = randGen.nextInt(size);
 		//}
 
 		occupied[x][y] = true;

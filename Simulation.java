@@ -17,7 +17,8 @@
 
 //import java.io.BufferedWriter;
 
-class Simulation {
+class Simulation
+{
 
 	private int currScore = 0;
 	private static int actionCost = -1;
@@ -33,7 +34,8 @@ class Simulation {
 	private TransferPercept transferPercept;
 	//private BufferedWriter outputWriter;
 
-	public Simulation(Environment wumpusEnvironment, int maxSteps, boolean nonDeterministic) { //, BufferedWriter outWriter, boolean nonDeterministic) {
+	public Simulation(Environment wumpusEnvironment, int maxSteps, boolean nonDeterministic)
+	{ //, BufferedWriter outWriter, boolean nonDeterministic) {
 
 		// start the simulator
 		simulationRunning = true;
@@ -65,7 +67,7 @@ class Simulation {
 				handleAction(agent.chooseAction());
 				wumpusEnvironment.placeAgent(agent);
 
-				environment.printEnvironment();								
+				environment.printEnvironment();
 				printCurrentPerceptSequence();
 
 				System.out.println("Current score: " + currScore);
@@ -92,7 +94,7 @@ class Simulation {
 				}
 				if (agent.getIsDead() == true) {
 					System.out.println("\n" + agent.getName() + " is DEAD!!");
-					//outputWriter.write("\n" + agent.getName() + " is DEAD!!\n");	
+					//outputWriter.write("\n" + agent.getName() + " is DEAD!!\n");
 				}
 
 			}
@@ -100,13 +102,14 @@ class Simulation {
 		}
 		catch (Exception e) {
 			System.out.println("An exception was thrown: " + e);
-		}		
+		}
 
 		printEndWorld();
 
 	}
 
-	public void printEndWorld() {
+	public void printEndWorld()
+	{
 
 		try {
 
@@ -125,11 +128,12 @@ class Simulation {
 
 	}
 
-	public void printCurrentPerceptSequence() {
+	public void printCurrentPerceptSequence()
+	{
 
 		try {
 
-			System.out.print("Percept: <");	
+			System.out.print("Percept: <");
 			//outputWriter.write("Percept: <");
 
 			if (transferPercept.getBump() == true) {
@@ -180,7 +184,8 @@ class Simulation {
 
 	}
 
-	public void handleAction(int action) {
+	public void handleAction(int action)
+	{
 
 		try {
 
@@ -209,7 +214,7 @@ class Simulation {
 			else if (action == Action.TURN_RIGHT) {
 
 				currScore += actionCost;
-				agent.turnRight();		
+				agent.turnRight();
 				environment.placeAgent(agent);
 
 				if (environment.getBump() == true) environment.setBump(false);
@@ -220,7 +225,7 @@ class Simulation {
 			else if (action == Action.TURN_LEFT) {
 
 				currScore += actionCost;
-				agent.turnLeft();		
+				agent.turnLeft();
 				environment.placeAgent(agent);
 
 				if (environment.getBump() == true) environment.setBump(false);
@@ -252,7 +257,7 @@ class Simulation {
 
 					if (environment.shootArrow() == true) environment.setScream(true);
 
-					currScore += shootCost;					
+					currScore += shootCost;
 				}
 				else {
 
@@ -283,7 +288,8 @@ class Simulation {
 		}
 	}
 
-	public int getScore() {
+	public int getScore()
+	{
 
 		return currScore;
 

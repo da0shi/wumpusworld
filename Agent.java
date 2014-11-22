@@ -17,7 +17,8 @@
 
 import java.util.Random;
 
-class Agent {
+class Agent
+{
 
 	private boolean nonDeterministicMode;
 
@@ -35,7 +36,8 @@ class Agent {
 	private TransferPercept percept;
 	private AgentFunction agentFunction;
 
-	public Agent(Environment world, TransferPercept perceptTrans, boolean nonDeterministic) {
+	public Agent(Environment world, TransferPercept perceptTrans, boolean nonDeterministic)
+	{
 
 		// set deterministic/non-deterministic
 		nonDeterministicMode = nonDeterministic;
@@ -56,35 +58,43 @@ class Agent {
 		setDirection(direction);
 	}
 
-	public void setIsDead(boolean dead) {
+	public void setIsDead(boolean dead)
+	{
 		isDead = dead;
 	}
 
-	public boolean getIsDead() {
+	public boolean getIsDead()
+	{
 		return isDead;
 	}
 
-	public void setHasGold(boolean possessGold) {
+	public void setHasGold(boolean possessGold)
+	{
 		hasGold = possessGold;
 	}
 
-	public boolean getHasGold() {
+	public boolean getHasGold()
+	{
 		return hasGold;
 	}
 
-	public String getName() {
+	public String getName()
+	{
 		return agentFunction.getAgentName();
 	}
 
-	public int chooseAction() {
+	public int chooseAction()
+	{
 		return agentFunction.process(percept);
 	}
 
-	public char getAgentIcon() {
+	public char getAgentIcon()
+	{
 		return agentIcon;
 	}
 
-	public void goForward() {
+	public void goForward()
+	{
 
 		if (nonDeterministicMode == false) {
 
@@ -113,7 +123,7 @@ class Agent {
 
 				if (moveDirection == 'F') {
 					if (location[0]+1 < worldSize) location[0] += 1;
-					else wumpusWorld.setBump(true);					
+					else wumpusWorld.setBump(true);
 				}
 				else if (moveDirection == 'L') {
 					if (location[1]-1 >= 0) location[1] -= 1;
@@ -128,7 +138,7 @@ class Agent {
 
 				if (moveDirection == 'F') {
 					if (location[1]+1 < worldSize) location[1] += 1;
-					else wumpusWorld.setBump(true);	
+					else wumpusWorld.setBump(true);
 				}
 				else if (moveDirection == 'L') {
 					if (location[0]+1 < worldSize) location[0] += 1;
@@ -143,7 +153,7 @@ class Agent {
 
 				if (moveDirection == 'F') {
 					if (location[0]-1 >= 0) location[0] -= 1;
-					else wumpusWorld.setBump(true);					
+					else wumpusWorld.setBump(true);
 				}
 				else if (moveDirection == 'L') {
 					if (location[1]+1 < worldSize) location[1] += 1;
@@ -158,7 +168,7 @@ class Agent {
 
 				if (moveDirection == 'F') {
 					if (location[1]-1 >= 0) location[1] -= 1;
-					else wumpusWorld.setBump(true);					
+					else wumpusWorld.setBump(true);
 				}
 				else if (moveDirection == 'L') {
 					if (location[0]-1 >= 0) location[0] -= 1;
@@ -172,7 +182,8 @@ class Agent {
 		}
 	}
 
-	private char nonDeterministicMove() {
+	private char nonDeterministicMove()
+	{
 
 		Random rand = new Random();
 		char moveDir = 'F';
@@ -191,10 +202,11 @@ class Agent {
 			case 9: moveDir = 'R'; break;
 		}
 
-		return moveDir;		
+		return moveDir;
 	}
 
-	public boolean shootArrow() {
+	public boolean shootArrow()
+	{
 
 		if (numArrows == 1) {
 			numArrows -= 1;
@@ -206,7 +218,8 @@ class Agent {
 
 	}
 
-	public void turnRight() {
+	public void turnRight()
+	{
 
 		if (direction == 'N') setDirection('E');
 		else if (direction == 'E') setDirection('S');
@@ -215,7 +228,8 @@ class Agent {
 
 	}
 
-	public void turnLeft() {
+	public void turnLeft()
+	{
 
 		if (direction == 'N') setDirection('W');
 		else if (direction == 'E') setDirection('N');
@@ -224,7 +238,8 @@ class Agent {
 
 	}
 
-	public void setDirection(char newDirection) {
+	public void setDirection(char newDirection)
+	{
 		direction = newDirection;
 
 		if (direction == 'N') agentIcon = 'A';
@@ -234,16 +249,19 @@ class Agent {
 
 	}
 
-	public char getDirection() {
+	public char getDirection()
+	{
 		return direction;
 	}
 
-	public void setLocation(int[] newLocation) {
+	public void setLocation(int[] newLocation)
+	{
 		location[0] = newLocation[0];
 		location[1] = newLocation[1];
 	}
 
-	public int[] getLocation() {
+	public int[] getLocation()
+	{
 		return location;
 	}
 

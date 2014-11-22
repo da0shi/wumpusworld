@@ -17,10 +17,11 @@
 
 //import java.io.BufferedWriter;
 
-class Environment {
+class Environment
+{
 
 	private char[][][] wumpusWorld;
-	private char[][][] percepts;	
+	private char[][][] percepts;
 	private int worldSize;
 	private String bar;
 
@@ -31,7 +32,8 @@ class Environment {
 	private boolean bump;
 	private boolean scream;
 
-	public Environment(int size, char[][][] world) { //, BufferedWriter outWriter) {
+	public Environment(int size, char[][][] world)
+	{ //, BufferedWriter outWriter) {
 
 		worldSize = size;
 
@@ -48,7 +50,7 @@ class Environment {
 		for (int i = 0; i < worldSize; i++) {
 			for (int j = 0; j < worldSize; j++) {
 				for (int k = 0; k < 4; k++) {
-					wumpusWorld[i][j][k] = world[i][j][k];	
+					wumpusWorld[i][j][k] = world[i][j][k];
 				}
 			}
 		}
@@ -74,13 +76,16 @@ class Environment {
 
 	}
 
-	public int getWorldSize() {
+	public int getWorldSize()
+	{
 		return worldSize;
 	}
 
-	public char getAgentDirection() {
+	public char getAgentDirection()
+	{
 
-		for (int i = 0; i < worldSize; i++) {
+		for (int i = 0; i < worldSize; i++)
+		{
 			for (int j = 0; j < worldSize; j++) {
 				if (wumpusWorld[i][j][3] == 'A') return 'N';
 				if (wumpusWorld[i][j][3] == '>') return 'E';
@@ -92,7 +97,8 @@ class Environment {
 		return '@';
 	}
 
-	public int[] getAgentLocation() {
+	public int[] getAgentLocation()
+	{
 
 		int[] agentPos = new int[2];
 
@@ -105,14 +111,15 @@ class Environment {
 			}
 		}
 
-		return agentPos;		
+		return agentPos;
 	}
 
-	public void placeAgent(Agent theAgent) {
+	public void placeAgent(Agent theAgent)
+	{
 
 		wumpusWorld[prevAgentPosition[0]][prevAgentPosition[1]][3] = ' ';
 
-		agent = theAgent;		
+		agent = theAgent;
 		wumpusWorld[agent.getLocation()[0]][agent.getLocation()[1]][3] = agent.getAgentIcon();
 
 		prevAgentPosition[0] = agent.getLocation()[0];
@@ -120,44 +127,52 @@ class Environment {
 
 	}
 
-	public void setBump(boolean bumped) {
+	public void setBump(boolean bumped)
+	{
 		bump = bumped;
 	}
 
-	public boolean getBump() {
+	public boolean getBump()
+	{
 		return bump;
 	}
 
-	public void setScream(boolean screamed) {
+	public void setScream(boolean screamed)
+	{
 		scream = screamed;
 	}
 
-	public boolean getScream() {
+	public boolean getScream()
+	{
 		return scream;
 	}
 
-	public boolean getBreeze() {
+	public boolean getBreeze()
+	{
 
 		if (percepts[agent.getLocation()[0]][agent.getLocation()[1]][0] == 'B') return true;
 		else return false;
 
 	}
 
-	public boolean getStench() {
+	public boolean getStench()
+	{
 
 		if (percepts[agent.getLocation()[0]][agent.getLocation()[1]][1] == 'S') return true;
 		else return false;
 
 	}
 
-	public boolean getGlitter() {
+	public boolean getGlitter()
+	{
 
 		if (percepts[agent.getLocation()[0]][agent.getLocation()[1]][2] == 'G') return true;
 		else return false;
 
 	}
 
-	public boolean grabGold() {
+	public boolean grabGold()
+	{
 
 		if (percepts[agent.getLocation()[0]][agent.getLocation()[1]][2] == 'G') {
 			percepts[agent.getLocation()[0]][agent.getLocation()[1]][2] = ' ';
@@ -168,7 +183,8 @@ class Environment {
 
 	}
 
-	public boolean checkDeath() {
+	public boolean checkDeath()
+	{
 
 		if (wumpusWorld[agent.getLocation()[0]][agent.getLocation()[1]][0] == 'P') return true;
 		else if (wumpusWorld[agent.getLocation()[0]][agent.getLocation()[1]][1] == 'W') return true;
@@ -177,7 +193,8 @@ class Environment {
 
 	}
 
-	public boolean shootArrow() {
+	public boolean shootArrow()
+	{
 
 		if (agent.getDirection() == 'N') {
 
@@ -257,14 +274,15 @@ class Environment {
 
 					return true;
 				}
-			}			
+			}
 		}
 
 		return false;
 
 	}
 
-	public void setPerceptMap() {
+	public void setPerceptMap()
+	{
 
 		// World: Pit,Wumpus,Gold,Agent
 		// Percepts: Breeze,Stench,Glitter,Scream
@@ -289,10 +307,11 @@ class Environment {
 
 				}
 			}
-		}	
+		}
 	}
 
-	public void printPercepts() {
+	public void printPercepts()
+	{
 
 		//System.out.println(" -----------------------");
 		System.out.println(" " + bar);
@@ -302,7 +321,7 @@ class Environment {
 				for (int k = 0; k < worldSize; k++) {
 
 					if (j == 0) {
-						System.out.print("| " + percepts[i][k][0] + " " + percepts[i][k][1] + " ");	
+						System.out.print("| " + percepts[i][k][0] + " " + percepts[i][k][1] + " ");
 					}
 					else {
 						System.out.print("| " + percepts[i][k][2] + " " + percepts[i][k][3] + " ");
@@ -322,7 +341,8 @@ class Environment {
 
 	}
 
-	public void printEnvironment() {
+	public void printEnvironment()
+	{
 
 		//   -----------------------
 		//  | P W | P W | P W | P W |

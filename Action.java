@@ -15,7 +15,8 @@
  *
  */
 
-class Action {
+class Action
+{
 
 	public static int START_TRIAL = 0;
 	public static int GO_FORWARD = 1;
@@ -26,13 +27,15 @@ class Action {
 	public static int NO_OP = 6;
 	public static int END_TRIAL = 7;
 
-	public Action() {
+	public Action()
+	{
 
 		// nothing to construct...
 
 	}
 
-	public static String printAction(int action) {
+	public static String printAction(int action)
+	{
 
 		if (action == 0) return "START_TRIAL";
 		else if (action == 1) return "GO_FORWARD";

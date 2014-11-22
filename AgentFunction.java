@@ -19,7 +19,8 @@ import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
-class AgentFunction {
+class AgentFunction
+{
 
 	// string to store the agent's name
 	// do not remove this variable
@@ -93,19 +94,22 @@ class AgentFunction {
 
 	// public method to return the agent's name
 	// do not remove this method
-	public String getAgentName() {
+	public String getAgentName()
+	{
 		return agentName;
 	}
 
 }
-class Sensor {
+class Sensor
+{
 	public boolean bump;
 	public boolean glitter;
 	public boolean breeze;
 	public boolean stench;
 	public boolean scream;
 	public Sensor (boolean bump, boolean glitter, boolean breeze,
-			boolean stench, boolean scream) {
+			boolean stench, boolean scream)
+	{
 		this.bump = bump;
 		this.glitter = glitter;
 		this.breeze = breeze;
