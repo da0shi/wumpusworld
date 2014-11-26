@@ -27,6 +27,7 @@ class AgentFunction
 	private String agentName = "Agent Smith";
 
 	private Map<Sensor, Integer> actionLog;
+	private char[][][] world;
 
 	// all of these variables are created and used
 	// for illustration purposes; you may delete them
